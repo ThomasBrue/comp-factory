@@ -1,5 +1,7 @@
-import { Component, Injector } from '@angular/core';
+import { Component, Injector, ViewChild } from '@angular/core';
 import { FactoryService } from './factory.service';
+
+import { MyAnchorDirective } from './my-anchor.directive';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +10,9 @@ import { FactoryService } from './factory.service';
 })
 export class AppComponent {
   title = 'comp-factory';
+
+  @ViewChild(MyAnchorDirective, { static: true })
+  appMyAnchor: MyAnchorDirective;
 
   constructor(injector: Injector, public myInputCell: FactoryService) {}
 }

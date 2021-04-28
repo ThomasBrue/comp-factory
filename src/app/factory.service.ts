@@ -26,6 +26,8 @@ export class FactoryService {
     );
     const myInputRef = factory.create(this.injector, [], popup);
 
+    console.log(factory.inputs);
+
     // Attach to the view so that the change detector knows to run
     this.applicationRef.attachView(myInputRef.hostView);
 
